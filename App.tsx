@@ -1,5 +1,4 @@
 import React from 'react';
-import { Home } from './src/screens/home'
 import {
   useFonts,
   Roboto_400Regular,
@@ -7,8 +6,9 @@ import {
 } from '@expo-google-fonts/roboto'
 import AppLoading from 'expo-app-loading'
 import { StatusBar } from 'expo-status-bar';
-import { AuthProvider } from './src/hooks/auth';
 
+import { AuthProvider } from './src/hooks/auth';
+import { Home } from './src/screens/home'
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -18,8 +18,8 @@ export default function App() {
 
   if (!fontsLoaded) {
     return <AppLoading />
-
   }
+
   return (
     <AuthProvider>
       <StatusBar

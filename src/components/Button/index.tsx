@@ -5,8 +5,7 @@ import {
     Text,
     TouchableOpacity,
     TouchableOpacityProps,
-    ActivityIndicator,
-    View
+    ActivityIndicator
 } from 'react-native';
 
 import { AntDesign } from '@expo/vector-icons';
@@ -30,15 +29,14 @@ export function Button({
     isLoading,
     ...rest
 }: Props) {
-    return (
 
+    return (
         <TouchableOpacity
             style={[styles.button, { backgroundColor }]}
             activeOpacity={0.7}
             disabled={isLoading}
             {...rest}
         >
-
             {
                 isLoading ? <ActivityIndicator color={color} /> :
                     <>

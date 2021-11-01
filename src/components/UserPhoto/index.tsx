@@ -20,14 +20,15 @@ const SIZES = {
 }
 
 type Props = {
-    imageUri: string | undefined,
+    imageUri: string | undefined;
     sizes?: 'SMALL' | 'NORMAL';
 }
 
 const AVATAR_DEFAULT = Image.resolveAssetSource(avatarImg).uri;
 
 export function UserPhoto({ imageUri, sizes = 'NORMAL' }: Props) {
-    const { containerSize, avatarSize } = SIZES[sizes]
+    const { containerSize, avatarSize } = SIZES[sizes];
+
     return (
         <LinearGradient
             colors={[COLORS.PINK, COLORS.YELLOW]}
@@ -39,7 +40,8 @@ export function UserPhoto({ imageUri, sizes = 'NORMAL' }: Props) {
                 height: containerSize,
                 borderRadius: containerSize / 2
 
-            }]}
+            }
+            ]}
         >
             <Image
                 source={{ uri: imageUri || AVATAR_DEFAULT }}
